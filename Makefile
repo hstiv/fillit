@@ -2,7 +2,7 @@ NAME = fillit
 
 SRCS = main.c fig_count.c ft_freeder_3.c figure_split.c bmc.c \
 	file_valid.c figure_valid.c filrd.c ft_strsplit_wtsp.c \
-	mass_count.c ft_cntchar.c ft_freeder.c $(LFT)
+	mass_count.c ft_cntchr.c ft_freeder.c $(LFT)
 
 LFT = libft/libft.a 
 
