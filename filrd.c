@@ -6,32 +6,35 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 14:10:56 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/23 18:04:20 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/02/24 19:58:59 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		filrd(char *file_name)
+char		*filrd(char *file_name)
 {
 	int		fd;
-	int		i;
 	int		y;
 	char	**s;
 	char	buf[BUFF_SIZE + 1];
+	char	*str;
 
 	if (!(fd = open(file_name, O_RDONLY)))
-		return (0);
+		return (NULL);
 	if ((y = read(fd, buf, BUFF_SIZE)) < 0)
-		return (0);
+		return (NULL);
 	buf[y] = '\0';
-	i = file_valid(buf);
-	if (i != 1)
-		return (i);
-	s = ft_strsplit_wtsp(buf, '\n');
-	i = figure_valid(s);
-	if (i != 1)
-		return (i);
-	ft_putstr("valid!\n");
-	return (1);
+	if (file_valid(buf) != 1)
+		return (NULL);
+	if (!(s = ft_strsplit_wtsp(buf, '\n')))
+		return (NULL);
+	if (figure_valid(s) != 1)
+	{
+		ft_freeder(s);
+		return (NULL);
+	}
+	ft_freeder(s);
+	str = ft_strdup(buf);
+	return (str);
 }

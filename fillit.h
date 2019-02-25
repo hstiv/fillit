@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 15:38:29 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/21 18:08:06 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/02/24 20:06:35 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 
 # define BUFF_SIZE 546
 
+void			ft_freeder_3(char ***s);
 int				bmc(char **s);
-void			ft_free_3m(char ***s, char **str);
+int				fig_count(char *s);
 int				file_valid(char *ptr);
 int				figure_valid(char **str);
-int				filrd(char *file_name);
+char			*filrd(char *file_name);
 char			**ft_strsplit_wtsp(char const *s, char c);
 char			***figure_split(char **str);
 

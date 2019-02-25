@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:58:42 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/23 17:59:12 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/02/24 18:23:25 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ static int	whole_file_vl(char *ptr)
 	i = ft_cntchr(ptr, '#');
 	l = i / 4;
 	if ((l * 4) != i)
-		return (2);
+		return (0);
 	i = ft_cntchr(ptr, '.');
 	l = i / 6;
 	if ((l * 6) != i)
-		return (2);
+		return (0);
 	return (1);
 }
 
@@ -58,7 +58,7 @@ static int	splited_vl(char **s)
 	{
 		grill = grill_check(s[l], grill);
 		if (grill < 4 && (ft_strlen(s[l]) != 4))
-			return (3);
+			return (0);
 		if (ft_strlen(s[l]) != 4 || s[l][0] == '\0')
 			grill = 0;
 		l++;
@@ -75,8 +75,9 @@ static int	not_split(char **s)
 	{
 		l = l - 5;
 		if (s[l][0] != '\0')
-			return (4);
+			return (0);
 	}
+	ft_freeder(s);
 	return (1);
 }
 
@@ -94,13 +95,8 @@ int			file_valid(char *ptr)
 	if (i != 1)
 	{
 		ft_freeder(s);
-		return (i);
+		return (0);
 	}
 	i = not_split(s);
-	if (i != 1)
-	{
-		return (i);
-		ft_freeder(s);
-	}
-	return (1);
+	return (i);
 }

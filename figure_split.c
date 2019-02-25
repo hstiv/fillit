@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 17:58:13 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/23 15:49:43 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/02/24 15:54:10 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,14 @@ char			***figure_split(char **str)
 	i = 0;
 	e = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (bmc(str) + 1))))
-	{
-		ft_free_3m(s, str);
 		return (NULL);
-	}
 	while (e < bmc(str))
 	{
-		s[e] = fv2(str, i);
+		if (!(s[e] = fv2(str, i)))
+		{
+			ft_freeder_3(s);
+			return (NULL);
+		}
 		i = i + 5;
 		e++;
 	}

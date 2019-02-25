@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 17:53:59 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/23 17:58:50 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/02/24 15:58:07 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int		fig_vl(char **s)
 			if (s[i][j] == '#')
 			{
 				if (det_check(s, i, j) == 0)
-					return (7);
+					return (0);
 				if (det_check(s, i, j) > 1)
 					y++;
 			}
@@ -60,18 +60,20 @@ static int		fig_vl(char **s)
 int				figure_valid(char **str)
 {
 	int			i;
-	int			j;
 	char		***s;
 
 	i = 0;
-	j = 0;
 	if (!(s = figure_split(str)))
 		return (0);
 	while (s[i] && i < 27)
 	{
-		if ((j = fig_vl(s[i])) != 1)
-			return (j);
+		if (fig_vl(s[i]) != 1)
+		{
+			ft_freeder_3(s);
+			return (0);
+		}
 		i++;
 	}
+	ft_freeder_3(s);
 	return (1);
 }
