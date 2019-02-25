@@ -25,9 +25,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					mass_count(char **s);
-void				ft_freeder(char **s);
-int					ft_cntchr(const char *ptr, int c);
 void				ft_arraydel(void **array);
 void				ft_dellst(void *lst, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));

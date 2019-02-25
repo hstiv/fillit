@@ -20,6 +20,9 @@
 
 # define BUFF_SIZE 546
 
+int			mass_count(char **s);
+void			ft_freeder(char **s);
+int			ft_chrcnt(const char *ptr, int c);
 void			ft_freeder_3(char ***s);
 int				bmc(char **s);
 int				fig_count(char *s);
