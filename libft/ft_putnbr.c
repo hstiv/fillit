@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-void				ft_putnbr(long long int n)
+void				ft_putnbr(int n)
 {
 	if (!n || (n > 2147483647 && n < -2147483648))
 		n = 0;
