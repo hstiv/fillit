@@ -14,10 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
 	char	*s;
 
-	i = 0;
 	if (argc == 2)
 	{
 		if ((s = filrd(argv[1])) == NULL)
@@ -25,7 +23,7 @@ int	main(int argc, char **argv)
 			ft_putstr("usage: fillit source_file\n");
 			return (0);
 		}
-		solve_map(s);
+//		solve_map(s);
 	}
 	if (argc != 2)
 	{
