@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
 static	char		**ft_splitter(char **argv, const char *s, char c)
 {
