@@ -1,10 +1,11 @@
 NAME = fillit
 
-SRCS = main.c fig_count.c ft_freeder_3.c figure_split.c bmc.c \
+SRCS = main.c ft_solver.c ft_lists.c ft_bytes.c \
+	fig_count.c ft_freeder_3.c figure_split.c bmc.c \
 	file_valid.c figure_valid.c filrd.c ft_strsplit_wtsp.c \
-	mass_count.c ft_cntchr.c ft_freeder.c $(LFT)
+	mass_count.c ft_cntchr.c ft_freeder.c grill_valid.c $(LFT)
 
-LFT = libft/libft.a 
+LFT = libft/libft.a
 
 HEADER = libft/
 
@@ -13,11 +14,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	make -C libft re && gcc -o $(NAME) $(FLAGS) $(SRCS)-I $(HEADER)
-
-norm:
-	norminette main.c figure_split.c bmc.c ft_freeder_3.c file_valid.c \
-	filrd.c ft_strsplit_wtsp.c fillit.h fig_count.c
+	make -C libft re && gcc -o $(NAME) $(FLAGS) $(SRCS) -I $(HEADER)
 
 clean:
 	rm -f *.o

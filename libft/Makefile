@@ -45,6 +45,7 @@ SRC = $(PATH_SRC)ft_strlen.c \
 	$(PATH_SRC)ft_strsub.c \
 	$(PATH_SRC)ft_strjoin.c \
 	$(PATH_SRC)ft_strtrim.c \
+	$(PATH_SRC)ft_strclr.c \
 	$(PATH_SRC)ft_strsplit.c \
 	$(PATH_SRC)ft_itoa.c \
 	$(PATH_SRC)ft_putchar.c \

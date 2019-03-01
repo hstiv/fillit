@@ -6,13 +6,13 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 14:35:35 by hstiv             #+#    #+#             */
-/*   Updated: 2019/02/19 18:32:43 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/01/11 17:58:57 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void		st_freeder(char **argv, size_t i)
+static	void		ft_freeder(char **argv, size_t i)
 {
 	while (i)
 	{
@@ -40,7 +40,7 @@ char				**ft_strsplit(char const *s, char c)
 			s++;
 		if (!(argv[i] = ft_strsub(s, 0, ft_strlenc(s, c))))
 		{
-			st_freeder(argv, i);
+			ft_freeder(argv, i);
 			return (NULL);
 		}
 		s += ft_strlenc(s, c);
