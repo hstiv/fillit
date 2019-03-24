@@ -14,13 +14,13 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	make -C libft re && gcc -o $(NAME) $(FLAGS) $(SRCS) -I $(HEADER)
+	@make -C libft re && gcc -o $(NAME) $(FLAGS) $(SRCS) -I $(HEADER)
 
 clean:
-	rm -f *.o
-	make -C libft fclean
+	@rm -f *.o
+	@make -C libft fclean
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
