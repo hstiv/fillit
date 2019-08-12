@@ -1,23 +1,24 @@
 NAME = fillit
 
-SRCS = main.c ft_solver.c ft_lists.c ft_bytes.c \
-	fig_count.c ft_freeder_3.c figure_split.c bmc.c \
-	file_valid.c figure_valid.c filrd.c ft_strsplit_wtsp.c \
-	mass_count.c ft_cntchr.c ft_freeder.c grill_valid.c $(LFT)
+SRCS = srcs/main.c srcs/ft_solver.c srcs/ft_lists.c srcs/ft_bytes.c \
+	srcs/fig_count.c srcs/ft_freeder_3.c srcs/figure_split.c srcs/bmc.c \
+	srcs/file_valid.c srcs/figure_valid.c srcs/filrd.c srcs/ft_strsplit_wtsp.c \
+	srcs/mass_count.c srcs/ft_cntchr.c srcs/ft_freeder.c srcs/grill_valid.c $(LFT)
 
 LFT = libft/libft.a
 
-HEADER = libft/
+HEADER = includes/
 
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	@make -C libft re && gcc -o $(NAME) $(FLAGS) $(SRCS) -I $(HEADER)
+	@make -C libft re
+	@gcc -o $(NAME) $(FLAGS) $(SRCS) -I $(HEADER)
 
 clean:
-	@rm -f *.o
+	@rm -f srcs/*.o
 	@make -C libft fclean
 
 fclean: clean

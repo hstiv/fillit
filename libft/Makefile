@@ -74,7 +74,7 @@ AR = ar rc
 
 
 $(NAME):
-	@gcc $(CFLAGS) -c $(SRC)
+	@gcc $(CFLAGS) -c $(SRC) -I ../includes/
 	@$(AR) $@ *.o
 	@ranlib $@
 
